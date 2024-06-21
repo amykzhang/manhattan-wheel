@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Influence of Genetics on BMI</title>
+      <meta name="description" content="Influence of Genetics on BMI" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet"> 
+      <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+
+  <body>
+    <main>
+
+      <section class="generic" id="intro">
+        <h1>
+          The Influence of Genetics on BMI
+        </h1>
+        <p>
+          Differences in our genetic code play a role in growth and risk of obesity during childhood. 
+          In this data story, we will look at the effect of genetic variation on Body Mass Index (BMI) in children.
+        </p>
+
+        <h2>What are SNPs?</h2>
+      </br>
+        <p>
+          Tiny differences in our genetic code are common and happen naturally among people. 
+          These differences can affect our physical traits, such as our height and weight, or how our body functions. 
+          They can even affect our chances of getting certain diseases.
+        
+        </br></br>
+          These differences could be as small as a change in a single letter in our DNA. We refer to these changes as single nucleotide polymorphisms, long for <mark><b>SNPs</b></mark> (pronounced "snips").
+        </p>
+        
+        <h2>Finding Important SNPs</h2>
+      </br>
+
+        <p>
+          Researchers study these genetic variants or SNPs to understand how they are connected to certain traits or diseases.
+          
+        </br></br>
+          Take childhood obesity, for example. 
+          Scientists suspect that common genetic variations might affect a child's height, weight, and body mass index (BMI) as they grow.
+        </br></br>
+          To investigate this idea, scientists perform an analysis known as <mark><b>genome-wide association studies (GWAS)</b></mark>.
+          These studies investigate how the millions of SNPs that shape who we are associate with BMI. 
+          This research identifies SNPs that are most likely to influence BMI at a certain age during childhood.
+        </br></br>
+      </section>
+
+      <section id="scrolly">
+
+        <figure>
+          <div class="container">
+            <div class="viz" id="manhattan_viz"  aria-label="Radial manhattan plot displaying genetic associations for childhood BMI at 8 months of age. The plot has two significant peaks for single nucleotide polymorphisms associated with increasing body mass index at the LEPR gene on chromosome 1 and ADCY3 gene on chromosome 2.">
+            </div> 
+            <div class="viz" id="temporal_viz" aria-label="Temporal forest plot displaying a selected single nucleotide polymorphism's effect size on childhood body mass index from birth to 8 years of age. Polymorphisms in this dataset have an effect size between -0.5 to 0.5.">
+            </div> 
+        </div>
+        </figure>
+
+        <article>
+
+          <div class="step" data-step="1">
+            <p>
+              Let's look at data from a <a href="https://www.nature.com/articles/s42255-022-00549-1">GWAS study</a> on childhood BMI in Norway.
+              Specifically, data collected in early childhood, when the children were eight months old.
+              </br></br>
+              Each dot on this wheel represents a SNP in one of 23 chromosomes. 
+              <mark><b>The further the dot is from the center, the more likely it is to influence BMI</b></mark> at eight months old.
+               </p>
+          </div>
+
+          <div class="step" data-step="2">
+            <p>
+              We've circled SNPs that scientists have found to significantly influence BMI at any point from birth to 8 years of age.
+              </br></br>
+            <mark> <b>Let's take a closer look at this SNP and its effect on BMI.</b></mark>
+            </p>
+          </div>
+
+          <div class="step" data-step="3">
+            <p>
+            We can plot this SNP's effect on BMI over time.
+            We see this SNP has a small but consistent effect on <mark><b>increasing BMI</b></mark> at the beginning of childhood.
+            </p>
+          </div>
+
+          <div class="step" data-step="4">
+            <p>
+              When plotting the effect of a SNP, we include error bars to show how confident we are about our estimation of the effect.
+              <br><br>
+              The closer the error bars are to the dot, the more <mark><b>precise and confident</b></mark> we are about the SNP's effect on BMI during childhood.
+            </p>
+          </div>
+
+          <div class="step" data-step="5">
+            <h2>So how does this SNP increase BMI?</h2>
+            <p>
+              This genetic variation occurs in the <mark><b>leptin receptor (<i>LEPR </i>) gene</b></mark>. This is one of the genes responsible for <mark><b>suppressing hunger and regulating weight</b></mark>.
+              
+            </br></br>
+              Changing the abundance or activity of this gene alters the body's energy balance, which changes the weight and BMI of babies. 
+              This effect quickly disappears when the child begins to grow.
+
+            </p>
+          </div>
+
+          <div class="step" data-step="6">
+            <h2>
+              Try finding important SNPs <br>for yourself!
+            </h2>
+            <p>
+              Click on SNPs in the wheel to see their effect on BMI. Rotate the wheel to see more SNPs.
+            </p>
+          </div>
+
+          <div class="step" data-step="7">
+          </div>
+        </article>
+
+        
+      </section>
+    </main>
+
+
+    <!-- Scripts (Only D3 active)-->
+    <script src="{% static 'src/d3.v7.min.js' %}"></script>
+    <script src="{% static 'src/intersection-observer.js' %}"></script>
+    <script src="{% static 'src/stickyfill.min.js' %}"></script>
+    <script src="{% static 'src/scrollama.min.js' %}"></script>
+    <script src="{% static 'temporal.js' %}"></script>
+    <script src="{% static 'manhattan.js' %}"></script>
+    <script src="{% static 'scrollama-settings.js' %}"></script>
+  </body>
+</html>
