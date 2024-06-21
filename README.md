@@ -2,7 +2,11 @@
 
 Differences in our genetic code play a role in growth and obesity during childhood. This data scrollytelling prototype looks at the association between genetic variation and childhood body mass index (BMI). 
 
-![](Demo_Final.mp4)
+
+
+https://github.com/amykzhang/manhattan-wheel/assets/38799436/c72e0add-6455-4e66-a1c7-762fb48bb211
+
+
 
 The prototype starts with a scroll-driven narrative that onboards the user to GWAS concepts. The onboarding ends with a coordinated view of a radial Manhattan plot on the left side of the screen linked to a linear temporal forest plot on the right. The onboarding narrative teaches users how to interpret GWAS visualizations before they are able to freely explore them.
 
